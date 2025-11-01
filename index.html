@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Listening LM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand-red': '#ff0000',
+                        'brand-background': '#0A0A0A',
+                        'brand-surface': '#141414',
+                        'brand-surface-light': '#1E1E1E',
+                        'brand-outline': '#2C2C2C',
+                        'brand-outline-hover': '#404040',
+                        'brand-text-primary': '#F5F5F5',
+                        'brand-text-secondary': '#A3A3A3',
+                        'brand-text-placeholder': '#737373',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        slideUpFade: {
+                            '0%': { opacity: 0, transform: 'translateY(12px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        slideInFromLeft: {
+                            '0%': { opacity: 0, transform: 'translateX(-20px)' },
+                            '100%': { opacity: 1, transform: 'translateX(0)' },
+                        },
+                        glow: {
+                          '0%, 100%': { boxShadow: '0 0 4px -2px #ff0000' },
+                          '50%': { boxShadow: '0 0 8px 0px #ff0000' },
+                        },
+                        subtleGlowBorder: {
+                           '0%': { borderColor: 'rgba(255, 0, 0, 0.3)' },
+                           '50%': { borderColor: 'rgba(255, 0, 0, 0.7)' },
+                           '100%': { borderColor: 'rgba(255, 0, 0, 0.3)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.4s ease-out forwards',
+                        'slide-up-fade': 'slideUpFade 0.5s ease-out forwards',
+                        'slide-in': 'slideInFromLeft 0.5s ease-out forwards',
+                        'glow': 'glow 2s ease-in-out infinite',
+                        'subtle-glow-border': 'subtleGlowBorder 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-brand-background text-brand-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

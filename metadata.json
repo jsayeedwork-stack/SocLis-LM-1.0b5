@@ -1,0 +1,5 @@
+{
+  "name": "Social Listening LM 1.0b5",
+  "description": "An AI chat application that understands context from uploaded PDF documents and pasted images, providing cited answers. Inspired by NotebookLM.",
+  "requestFramePermissions": []
+}
